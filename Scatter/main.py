@@ -19,10 +19,10 @@ def generate_data(points_count: int) -> pd.DataFrame:
 
 def visualize_v1(data: pd.DataFrame) -> None:
     plt.scatter(
-        pd_data.X, 
-        pd_data.Y, 
+        data.X, 
+        data.Y, 
         s=3,            # marker size
-        c = pd_data.Y,  # values for cmap
+        c=data.Y,  # values for cmap
         cmap='viridis'  # options : viridis, plasma, inferno, magma, cividis, seismic, coolwarm, tab10
     )
 
@@ -31,16 +31,21 @@ def visualize_v1(data: pd.DataFrame) -> None:
 def visualize_v2(data: pd.DataFrame) -> None:
     plt.style.use('ggplot')
 
-    label_font = {'family':'serif','color':'darkblue','size':10}
+    label_font = {
+        'family': 'serif',
+        'color': 'darkblue',
+        'size': 10
+    }
+
     plt.xlabel('X-axis label', fontdict=label_font)
     plt.ylabel('Y-axis label', fontdict=label_font)
     plt.title('Example of Scatter Plot')
 
     plt.scatter(
-        pd_data.X, 
-        pd_data.Y, 
+        data.X, 
+        data.Y, 
         s=3,            # marker size
-        c = pd_data.Y,  # values for cmap
+        c=data.Y,  # values for cmap
         cmap='viridis'  # options : viridis, plasma, inferno, magma, cividis, seismic, coolwarm, tab10
     )
 

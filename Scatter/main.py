@@ -44,6 +44,9 @@ def visualize_v2(data: pd.DataFrame) -> None:
         cmap='viridis'  # options : viridis, plasma, inferno, magma, cividis, seismic, coolwarm, tab10
     )
 
+    plt.axvline(18, color='r', linestyle='dashed', linewidth=1)
+    plt.axvline(22, color='b', linestyle='dashed', linewidth=1)
+
     plt.colorbar()
     plt.show()
 
